@@ -3,7 +3,8 @@
 <p align="center">Fully static proxy that actually works!</p>
 
 > [!IMPORTANT]
-> If you fork this project, giving it a star in the original repo would be greatly appreciated!
+> If you fork this project, giving it a star in the original repo would be greatly appreciated! <br>
+And please leave in the credits!
 
 
 ## Features
