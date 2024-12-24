@@ -17,8 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
 function formatSearch(query) {
   try{
     const match=query.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([\w\-]+)/);
+    console.log(match);
     if(match)return `https://www.youtube-nocookie.com/embed/${match[1]}`;
-  }catch(e){
-    return query;
-  }
+  }catch(e){}
+  
+  try {
+    return new URL(query).toString()
+  } catch (e) { }
+
+  try {
+    const url = new URL(`http://${query}`)
+    if (url.hostname.includes('.')) return url.toString()
+  } catch (e) { }
+
+  return new URL(`https://duckduckgo.com/?t=h_&q=${query}`).toString()
 }
