@@ -1,3 +1,4 @@
+このプロジェクトは、Lightning Proxyを改良したものであり、以下はLightning ProxyのREADME.mdです。
 <p align="center"><img src="assets/img/lightning-static.png" height="200"></p>
 <h1 align="center">Lightning Proxy</h1>
 <p align="center">Fully static proxy that actually works!</p>
