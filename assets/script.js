@@ -15,15 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function formatSearch(query) {
-  // This function turns the inputted value into a Google search if it's not a normal URL
-  try {
-    return new URL(query).toString()
-  } catch (e) { }
-
-  try {
-    const url = new URL(`http://${query}`)
-    if (url.hostname.includes('.')) return url.toString()
-  } catch (e) { }
-
-  return new URL(`https://duckduckgo.com/?t=h_&q=${query}`).toString()
+  try{
+    const match=message.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([\w\-]+)/);
+    if(match)return `https://www.youtube-nocookie.com/embed/${match[1]}`;
+  }catch(e){}
 }
