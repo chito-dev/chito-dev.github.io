@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function formatSearch(query) {
   try{
-    const match=message.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([\w\-]+)/);
+    const match=query.match(/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/(?:watch\?v=|embed\/|v\/|shorts\/))([\w\-]+)/);
     if(match)return `https://www.youtube-nocookie.com/embed/${match[1]}`;
-  }catch(e){}
+  }catch(e){
+    return query;
+  }
 }
